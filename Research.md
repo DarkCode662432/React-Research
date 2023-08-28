@@ -43,3 +43,19 @@
 
 ### Resource:
 Inject some extra excitement into your journey by exploring the exhilarating insights shared by the visionary Abhishek Tiwari himself.[**Check out the full article here ↗**](https://medium.com/@Abhishek-Tiwari/the-history-and-evolution-of-web-development-from-html-to-the-modern-web-982e3f90e891#:~:text=The%20History%20and%20Evolution%20of%20Web%20Development%3A%20From,Full-Stack%20Development%20%282010s%20-%20Present%29%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF%20%D9%85%D9%86%20%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D8%B5%D8%B1). Prepare to be inspired and captivated by the thrilling tale of web development's evolution!
+
+## The Rendering Process in the Past 
+### Content:
+1. Rewind to the early days of the internet, where the foundations of website development thrived on the power of Server-Side Rendering (SSR) technologies like PHP. SSR took center stage as the server meticulously generated and delivered HTML to the client's browser for rendering. Simple websites without the need for dynamic updates or intricate user interactions found solace in this approach.
+
+2. SSR held a secret ingredient that empowered websites to transcend device limitations. Regardless of limited processing power or sluggish internet connections, websites flourished. The server shouldered the burden of HTML generation, ensuring that even devices with modest capabilities could load pages swiftly.
+
+3. Let's uncover the allure of SSR with its remarkable benefits:
+  - Swift page loads: SSR's prowess allowed the server to transmit complete HTML pages to clients, leading to lightning-fast load times compared to Client-Side Rendering (CSR).
+  - SEO superiority: With the server taking charge of generating the entire HTML page, search engine crawlers reveled in the ease of indexing, enhancing a website's visibility on search engine result pages.
+  - Simplicity for static sites: SSR's charm lies in its suitability for websites that boast simplicity, devoid of complex interactions or dynamic content.
+4. However, SSR had its limitations, revealing its vulnerable side:
+  - Interactive restrictions: As most rendering occurred on the server side, SSR proved less ideal for websites demanding frequent updates or intricate user interactions.
+  - Resource hunger: The server bore the brunt of SSR's resource-intensive nature, especially when dealing with an abundance of pages or concurrent users.
+### Delve Deeper with this Resource
+Feel free to explore the fascinating journey of content rendering on websites in the past by visiting [this GitHub resource ↗.](https://gist.github.com/rasheedsaqib/be2084922356df4d3d61500e66177e58)
