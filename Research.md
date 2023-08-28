@@ -49,7 +49,7 @@ Inject some extra excitement into your journey by exploring the exhilarating ins
 1. Rewind to the early days of the internet, where the foundations of website development thrived on the power of Server-Side Rendering (SSR) technologies like PHP. SSR took center stage as the server meticulously generated and delivered HTML to the client's browser for rendering. Simple websites without the need for dynamic updates or intricate user interactions found solace in this approach.
 
 2. SSR held a secret ingredient that empowered websites to transcend device limitations. Regardless of limited processing power or sluggish internet connections, websites flourished. The server shouldered the burden of HTML generation, ensuring that even devices with modest capabilities could load pages swiftly.
-
+![SSR](https://miro.medium.com/max/7680/1*ZfWcvvaK6fO_HpjEq4mGGQ.png)
 3. Let's uncover the allure of SSR with its remarkable benefits:
   - Swift page loads: SSR's prowess allowed the server to transmit complete HTML pages to clients, leading to lightning-fast load times compared to Client-Side Rendering (CSR).
   - SEO superiority: With the server taking charge of generating the entire HTML page, search engine crawlers reveled in the ease of indexing, enhancing a website's visibility on search engine result pages.
