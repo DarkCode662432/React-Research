@@ -1,24 +1,3 @@
-# OverView:
-## Topics to Cover:
-  - The Evolution of the Web: Tracing the history and development of web technologies.
-  - The Rendering Process in the Past: Exploring how web documents were displayed in earlier times.
-  - Problem-Solving with React: Understanding the issues that React addresses in web development.
-  - Benefits of Framework Utilization: Exploring the advantages of using a framework in web development.
-  - Framework vs. Library: Distinguishing between a framework and a library and their respective roles.
-  - Understanding React's Inner Workings: Delving into the working principles of React.
-  - Client-Side vs. Server-Side: Differentiating between client-side and server-side in web applications.
-  - Advantages of Client-Side Development: Exploring the reasons for using client-side technologies.
-  - Advantages of Server-Side Development: Understanding the benefits of server-side technologies.
-  - React's Rendering Mechanism: Explaining the concept of rendering in React.
-  - The Document Object Model (DOM): Defining the DOM and its significance in web development.
-  - The Virtual DOM: Understanding the concept of the virtual DOM in React.
-  - Pros and Cons of the Virtual DOM: Evaluating the advantages and disadvantages of the virtual DOM.
-  - Enhancing the Virtual DOM: Investigating potential improvements to the virtual DOM based on research and perspectives.
-  - React vs. jQuery: Highlighting the differences between React and jQuery.
-## Bonus Points 💯:
-  - React for Multi-Platforms: Exploring the capabilities of React in developing applications for various platforms.
-  - Beyond the Browser: Understanding how React functions on platforms other than web browsers.
-
 # Topics: 
 1. ## The Exciting Evolution of the Web!
   ### **Brace yourself for an exhilarating journey through the history and evolution of web development, where innovation knows no bounds!**
@@ -282,5 +261,57 @@ For more articles on web development, dive into the realm of [Javascript ↗](ht
 
 
   ### Resources:
-    - To learn more visit [Dev.to](https://dev.to/mateo_garcia/understanding-rendering-in-react-i5i)
-    - To learn react visit [React Docs](https://reactjs.org/docs/faq-internals.html)
+  - To learn more visit [Dev.to](https://dev.to/mateo_garcia/understanding-rendering-in-react-i5i)
+  - To learn react visit [React Docs](https://reactjs.org/docs/faq-internals.html)
+
+9. ## Pros and Cons of the Virtual DOM:
+  ### Content:
+  - #### What is Virtual DOM?
+    Like what we mentioned above, it is one of the most notable React features. In a nutshell, React is an open-source JavaScript library for creating UI. For starters, we also dedicate another focusing React article for you to read. The first thing you need to know about what is virtual dom is that “DOM” stands for “Document Object Model”. It represents your application’s UI. As a result, whenever there is a change in UI, the DOM becomes updated.
+
+    ![EX.1](https://s3.ap-southeast-1.amazonaws.com/arrowhitech.com/wp-content/uploads/2020/07/02034639/compare.jpg)
+
+    Likewise, Virtual DOM is the virtual representation. It surely works faster and more effective and (Real) DOM. What’s more, because DOM only needs few operations, it can reduce the performance cost greatly. That is to say about What is virtual dom, it’s time for the next essential point:
+
+  - #### How does Virtual DOM work in React?
+    - As soon as you answer What is virtual dom, let’s continue to explore how does Virtual Dom work in React.
+
+    - #### Render () function
+    As Virtual DOM is a node tree listing content, `render()` function is the very first point of entry. Again, whenever a component changes, it is updated and the `render()` will turn to a different tree or branch of React elements.
+
+    Thanks to this feature, React will know how to update UI in the most effective way!
+
+    - #### Batch update
+    This is what React follows to update Virtual DOM. Instead of sending updates for 1 change only, it helps send in a batch. Therefore, performance can run more smoothly and fast.
+  
+  - #### Top 5 benefits that Virtual DOM offers:
+    
+    - Maximized Memory Usage
+    Virtual DOM features make it use less noticeable space in memory usage. A new virtual UI is triggered via a single change in the data model. This is a superior benefit to React when compared to other libraries such as AngularJS, VueJS, and EmberJS.
+
+    - CPU
+    The updating method of adding a scripting layer makes DOM manipulations transparent to the programmers. As a result, VDOM makes React more CPU intensive!
+
+    - High Performance
+    When React creates Virtual DOM from the beginning, it uses `setState()`. 
+    (You can read more about `setState()` on their [official site](https://reactjs.org/docs/faq-internals.html))
+    It helps better performance thanks to less time building the complete tree. In fact, because React keeps not 1, but 2 VDOM trees in its memory, it even greatly boosts the productivity. 
+
+    - Simple Use
+    Yes, an amazing and effective product with complicated use is so ineffective! Our skilled developers believe that React and VD are pretty much easier to use than other JavaScript approaches. For newcomers, if you don’t know where to start, contact our **24/7** service and we will answer you as soon as possible
+
+    - Productivity
+    An efficient way of updating data in web applications like what we’ve mentioned a couple of times will increase efficiency. Virtual DOM is faster and easier to render than UI in the real DOM.
+
+  - #### the drawbacks of virtual DOM:
+
+    - Higher memory usage problems as the diffing algorithms need to keep comparing the elements to know which components needs to be updated or changed.
+    - It is not easily integrated into many other frameworks.
+    - You can’t use it or target template engines.
+
+  ### Resources:
+  - [Blog AHT Tech](https://blog.arrowhitech.com/virtual-dom-its-definition-and-benefits-that-you-must-know/)
+  - [Blog Knowledgehut](https://www.knowledgehut.com/blog/web-development/react-virtual-dom#pros-and-cons-of-virtual-dom%C2%A0)
+
+11. ## React vs. jQuery:
+  React is JS frameWork, but jQuery is JS libiry
