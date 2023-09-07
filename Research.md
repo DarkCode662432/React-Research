@@ -176,7 +176,7 @@ For more articles on web development, dive into the realm of [Javascript ↗](ht
       
         * It's mean do every thing in website, poor thing!😥
     
-    * #### What is server-side development?
+  * #### What is server-side development?
       
   - Server-side development, sometimes called back-end development, is a type of development that involves programs that run on a server. This type of programming is important because web browsers, or clients, interact with web servers to retrieve information. Users don't see this development because it happens on servers. Common server-side tasks include:
 
@@ -219,3 +219,68 @@ For more articles on web development, dive into the realm of [Javascript ↗](ht
 
   ### Resources:
   Ready to embark on this thrilling expedition into the world of client-side development? Dive into the depths of the Advantages of Client-Side Development by exploring the captivating [blog ↗](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Top-five-benefits-of-client-side-rendering#:~:text=Top%205%20benefits%20of%20client-side%20rendering%20frameworks%201,Client-side%20rendering%20means%20a%20better%20client%20experience%20). Let the adventure begin!
+
+
+8. ## React's Rendering Mechanism:
+  ### Content:
+  - #### To understand why React is so fast it is important to know these four concepts:
+      
+      - Virtual DOM.
+      The Virtual DOM was a strategy that appeared to solve the modifications or mutations that the DOM suffers when using a web or mobile application. Rendering the entire document tree is too costly as applications become more complex; by mutations, we can understand any change that the DOM can undergo: an insertion/modification/deletion of an element or its properties.
+
+      Thus, the Virtual DOM came to represent the DOM tree in memory. Perform calculations using the state and props and finally decide which elements of the actual DOM (the browser one, I mean haha) should be mutated. [From the official React website](https://reactjs.org/docs/faq-internals.html):
+
+          The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.    
+
+      Initially, I said that the concept we normally know as rendering is different in React, I personally considered rendering as the procedure of synchronizing changes in the DOM. React synchronizes the changes in the DOM through three steps.
+      
+      ![EX.1](https://res.cloudinary.com/practicaldev/image/fetch/s--8w4-NrE6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/csjl5onhxu99qhokbfjh.png)
+      
+      - Render.
+      Rendering is a process that is triggered by a change of state in some component of your application, when a state change occurs React:
+      
+      ![EX.2](https://res.cloudinary.com/practicaldev/image/fetch/s--rulaPxWd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9s7jqpadoijq32y5b1eo.png)
+      
+      * It will collect from the root of your App all the components that requested a re-render because their state or their props changed.
+        
+      * It will invoke these components
+        
+        * If you use `function components` it will invoke the function itself, something `like Header(props)`.
+        
+        * If you use `class components` it will `invoke YourComponent.render()`.
+
+      Even when the process's name is rendering, at this point, the DOM has not been modified or altered, which could be a little tricky if you think as I did, about the meaning of render.
+
+      Since we normally use `JSX`, the code will be transformed to `React.createElement(...)`. The output of the `createElement` will describe how the application should look like in the next version of the render through the next stage called:
+
+      - Reconciliation.
+      Once the re-rendering has happened, React has the context of two versions of the `React.createElement` output, the version executed before the state change occurred, and the version executed after the state has changed.
+      
+      ![EX.3](https://res.cloudinary.com/practicaldev/image/fetch/s--WO9HqQdq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/5b2efk1nj6yhl83jou5i.png)
+
+      At this point two objects are describing the UI, React through a heuristic algorithm of order O(n^3) will be able to determine which elements need to be represented again.
+
+      Among technical details the React team tells us some aspects about how React identifies which elements were affected:
+
+      * Elements that changed type must be recreated.
+
+      * Changes within the attributes of an element are replaced, without unmounting the element.
+
+      * Upgrades within the element's children recreate all children
+
+      * Updates within child elements that use `key` as attributes are compared and only new items are represented.
+
+      - Commit.
+      After React calculated all the changes that should be made in the application tree, `react-dom` appears for the browser and `react-native` for the mobile platforms, which make the modifications to the browser or mobile app API (finally! 🥳). Synchronously React will clean up the past layout effects, run the new layout effects, then the browser will paint the DOM, after that, React will clean up the past effects and mount the new ones; when I talk about effects I refer to the lifecycles method such as [useLayoutEffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect) and [useEffect](After React calculated all the changes that should be made in the application tree, react-dom appears for the browser and react-native for the mobile platforms, which make the modifications to the browser or mobile app API (finally! 🥳). Synchronously React will clean up the past layout effects, run the new layout effects, then the browser will paint the DOM, after that, React will clean up the past effects and mount the new ones; when I talk about effects I refer to the lifecycles method such as useLayoutEffect and useEffect.).
+
+      ![EX.4](https://res.cloudinary.com/practicaldev/image/fetch/s--iWg-G05---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9pswc5zt2psdqbgiq8oa.png)
+  
+      To explain the lifecycles method part a little bit more, I bring to you this wonderful graph that Donavon West and his contributors created. This is the project [repo](https://github.com/donavon/hook-flow), check it out!
+
+      ![EX.5](https://res.cloudinary.com/practicaldev/image/fetch/s--Gb81aRyw--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/rexqxdys2yzjq7m178ba.png)
+
+
+
+  ### Resources:
+    - To learn more visit [Dev.to](https://dev.to/mateo_garcia/understanding-rendering-in-react-i5i)
+    - To learn react visit [React Docs](https://reactjs.org/docs/faq-internals.html)
